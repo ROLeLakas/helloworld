@@ -16,11 +16,11 @@ spec:
     spec:
       containers:
       - name: app
-        image: rolelakas/helloworld
+        image: registry.digitalocean.com/trckads/helloworld
         env:
         - name: TEST_ENV
           value: "Hello, World!"
         - name: PORT
           value: "3000"
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
