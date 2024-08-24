@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-service
+  labels:
+    app: helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld-service
+  template:
+    metadata:
+      labels:
+        app: helloworld-service
+    spec:
+      containers:
+      - name: app
+        image: rolelakas/helloworld
+        env:
+        - name: TEST_ENV
+          value: "Hello, World!"
+        - name: PORT
+          value: "3000"
+        ports:
+        - containerPort: 3000
